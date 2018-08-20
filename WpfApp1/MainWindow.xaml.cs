@@ -42,7 +42,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(PlayersWithoutTeam.SelectedValue!=null)
+            if(PlayersWithoutTeam.SelectedValue!=null&& TeamsView.SelectedValue!=null)
             db.People.Single(x => x.Name == ((Person)PlayersWithoutTeam.SelectedValue).Name).Team = db.Teams.Single(x => x.Name == ((Team)TeamsView.SelectedValue).Name);
 
             //for update list person
