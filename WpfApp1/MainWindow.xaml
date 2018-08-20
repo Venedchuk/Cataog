@@ -15,5 +15,6 @@
         <ListBox  x:Name="Players" HorizontalAlignment="Left" Height="289" Margin="170,99,0,0" VerticalAlignment="Top" Width="115" IsSynchronizedWithCurrentItem="False" SelectionChanged="TeamsView_SelectionChanged"/>
         <Label Content="Player WithoutTeam  " HorizontalAlignment="Left" Margin="328,73,0,0" VerticalAlignment="Top" Width="125"/>
         <ListBox  x:Name="PlayersWithoutTeam" HorizontalAlignment="Left" Height="289" Margin="328,99,0,0" VerticalAlignment="Top" Width="115" IsSynchronizedWithCurrentItem="False" SelectionChanged="TeamsView_SelectionChanged"/>
+        <Button Content="Add to team" HorizontalAlignment="Left" Margin="453,99,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

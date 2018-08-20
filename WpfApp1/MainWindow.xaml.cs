@@ -30,16 +30,24 @@ namespace WpfApp1
             Players.DisplayMemberPath = "Name";
 
             PlayersWithoutTeam.ItemsSource = db.People.Where(x => x.Team == null);
-
+            PlayersWithoutTeam.DisplayMemberPath = "Name";
         }
 
         public DataService db = new DataService();
 
         private void TeamsView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          
             Players.ItemsSource = db.People.Where(x => x.Team == TeamsView.SelectedValue);
-            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(PlayersWithoutTeam.SelectedValue!=null)
+            db.People.Single(x => x.Name == ((Person)PlayersWithoutTeam.SelectedValue).Name).Team = db.Teams.Single(x => x.Name == ((Team)TeamsView.SelectedValue).Name);
+
+            //for update list person
+            PlayersWithoutTeam.ItemsSource = db.People.Where(x => x.Team == null);
+            Players.ItemsSource = db.People.Where(x => x.Team == TeamsView.SelectedValue);
         }
     }
 }
